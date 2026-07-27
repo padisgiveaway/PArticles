@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Padis Article</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="box">
+      <div class="adsbox"></div>
+        <p class="well">Welcome to <span>Padis Article</span></p>
+        <p class="info"><span id="likeamount">0</span> Liked our posts</p>  <!-- FIXED HERE -->
+        <div id="cat">
+          <button class="cat-btn active" data-cat="all">All</button>
+          <button class="cat-btn" data-cat="programming">Programming</button>
+          <button class="cat-btn" data-cat="update">Update</button>
+          <button class="cat-btn" data-cat="graphic">Graphic Design</button>
+        </div>
+    </div>
+    <div class="content" id="articles-container"></div>
+  </div>
+
+  <div id="reactions">
+    <button id="like"><i class="fa-solid fa-heart"></i></button>
+    <button id="share"><i class="fa-solid fa-share"></i></button>
+    <a href="https://chat.whatsapp.com/Gfglg3EGsi534yNHMGE3pD" target="_blank">
+      <button id="group"><i class="fa-brands fa-whatsapp"></i></button>
+    </a>
+  </div>
+  <div class="loveshow non-active" id="loves"><i class="fa-solid fa-heart"></i></div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
