@@ -53,3 +53,6 @@ body {
 .share-article-btn:hover{
   background: #1ebe5c;
 }
+#article-container{
+  overflow: auto;
+}
