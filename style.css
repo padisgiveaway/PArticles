@@ -47,13 +47,13 @@ body{font-size: 15pt;
 #cat button.active{ background: blue; color: white; }
 
 /* 4. BIGGER CONTENT */
-.content{ width: 100%; min-height: 65vh; overflow: auto;}
+.content{ width: 100%; min-height: 45vh; overflow: auto;}
 .article-card{
   width: 90%; max-width: 600px; background-color: white; border-radius: 10px; border: 2px solid blue;
   margin: 20px auto; padding: 0 0 15px 0; position: relative;
 }
 .article-card img,.article-card video{
-  width: 98%; border-radius: 10px 10px 0 0; max-height: 400px; object-fit: cover; padding: 7px;
+  width: 95%; border-radius: 10px 10px 5px 65vhh; max-height: 400px; object-fit: cover; padding: 12px;
 }
 .article-card h2{ text-align: center; color: red; padding: 10px; font-size: 20px; }
 .article-card p{ padding: 0 15px 15px; font-weight: 600; color: blue; font-size: 14px; line-height: 1.6; }
