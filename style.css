@@ -49,11 +49,10 @@ body{
 .adsbox{
   width: 100%; 
   max-width: 728px; 
-  margin: 15px auto; 
   text-align: center; 
   min-height: 90px;
   background: rgba(255,255,255,0.1); 
-  border-radius: 10px;
+  border-radius: 1px;
   overflow: hidden; /* prevent banner from expanding container */
   position: absolute;
 }
@@ -85,7 +84,7 @@ body{
   backdrop-filter: blur(5px);
 }
 
-#cat{ width: 100%; positon: absolute; text-align: center; margin: 10px 0 15px; }
+#cat{ width: 100%; positon: absolute; text-align: center; margin: 10px 0 15px; top: 90px }
 #cat button{ 
   width: 20%; max-width: 150px; margin: 5px; border-radius: 10px; border: 2px solid blue; 
   font-size: 9px; color: black; height: 35px; cursor: pointer; font-weight: 900; background: white; 
@@ -112,7 +111,7 @@ body{
   padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 14px; z-index: 10;
 }
 .download-btn:hover{ background: #0056b3; }
-.loveshow{ position: fixed; font-size: 0px; color: red; bottom: 50%; left: 50%; transform: translate(-50%, -50%); animation: show 2s linear; pointer-events: none; }
+.loveshow{ position: absolute; font-size: 0px; color: red; top: 110px; left: 50%; transform: translate(-50%, -50%); animation: show 2s linear; pointer-events: none; }
 @keyframes show{ 0%{font-size: 0px; opacity: 100%;} 100%{font-size: 200px; opacity: 0%;} }
 .non-active{ display: none; }
 .article-actions{
