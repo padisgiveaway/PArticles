@@ -47,7 +47,7 @@ body{font-size: 15pt;
 #cat button.active{ background: blue; color: white; }
 
 /* 4. BIGGER CONTENT */
-.content{ width: 100%; min-height: 70vh; overflow: auto;}
+.content{ width: 100%; min-height: 65vh; overflow: auto;}
 .article-card{
   width: 90%; max-width: 600px; background-color: white; border-radius: 10px; border: 2px solid blue;
   margin: 20px auto; padding: 0 0 15px 0; position: relative;
