@@ -55,6 +55,7 @@ body{
   background: rgba(255,255,255,0.1); 
   border-radius: 10px;
   overflow: hidden; /* prevent banner from expanding container */
+  position: absolute;
 }
 
 #reactions{ 
@@ -102,9 +103,9 @@ body{
   margin: 20px auto; padding: 0 0 15px 0; position: relative;
 }
 .article-card img,.article-card video{
-  width: 100%; border-radius: 10px 10px 0 0; max-height: 400px; object-fit: cover;
+  width: 95%; border-radius: 10px 10px 5px cover; max-height: 400px;padding: 12px; object-fit: cover;
 }
-.article-card h2{ text-align: center; color: red; padding: 10px; font-size: 20px; }
+  .article-card h2{ text-align: center; color: red; padding: 10px; font-size: 20px; }
 .article-card p{ padding: 0 15px 15px; font-weight: 600; color: blue; font-size: 14px; line-height: 1.6; }
 .download-btn{
   position: absolute; top: 10px; right: 10px; background: #007bff; color: white; border: none;
