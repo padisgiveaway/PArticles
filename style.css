@@ -85,10 +85,9 @@ body{
   backdrop-filter: blur(5px);
 }
 
-#cat{ width: 100%; text-align: center; margin: 10px 0 15px; }
-#cat button{ 
-  width: 22%; max-width: 150px; margin: 5px; border-radius: 10px; border: 2px solid blue; 
-  font-size: 12px; color: black; height: 35px; cursor: pointer; font-weight: 900; background: white; 
+#cat{ width: 100%; text-align: center; margin: 10px 0 15px; position: fixeded#cat button{ 
+  width: 20%; max-width: 150px; margin: 5px; border-radius: 10px; border: 2px solid blue; 
+  font-size: 10px; color: black; height: 35px; cursor: pointer; font-weight: 900; background: white; 
 }
 #cat button.active{ background: blue; color: white; }
 
@@ -103,7 +102,7 @@ body{
   margin: 20px auto; padding: 0 0 15px 0; position: relative;
 }
 .article-card img,.article-card video{
-  width: 95%; border-radius: 10px 10px 5px cover; max-height: 400px;padding: 12px; object-fit: cover;
+  width: 98%; border-radius: 10px 10px 5px cover; max-height: 400px;padding: 12px; object-fit: cover;
 }
   .article-card h2{ text-align: center; color: red; padding: 10px; font-size: 20px; }
 .article-card p{ padding: 0 15px 15px; font-weight: 600; color: blue; font-size: 14px; line-height: 1.6; }
@@ -112,7 +111,7 @@ body{
   padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 14px; z-index: 10;
 }
 .download-btn:hover{ background: #0056b3; }
-.loveshow{ position: fixed; font-size: 0px; color: red; bottom: 50%; left: 50%; transform: translate(-50%, -50%); animation: show 2s linear; pointer-events: none; }
+.loveshow{ position: absolute; font-size: 0px; color: red; bottom: 50%; left: 50%; transform: translate(-50%, -50%); animation: show 2s linear; pointer-events: none; }
 @keyframes show{ 0%{font-size: 0px; opacity: 100%;} 100%{font-size: 200px; opacity: 0%;} }
 .non-active{ display: none; }
 .article-actions{
