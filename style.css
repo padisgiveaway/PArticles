@@ -38,13 +38,13 @@ body{
 
 /* 2. HEADER - THIS WILL BE FIXED AND NOT MOVE */
 #box{ 
-  position: fixed; /* KEY CHANGE: FIXED TO TOP */
+  position: absolute; /* KEY CHANGE: FIXED TO TOP */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 50;
   background: transparent; /* so background image shows */
-  padding-top: 10px;
+  padding-top: 0px;
   height: 190px; /* fixed height for header area */
 }
 
@@ -74,6 +74,8 @@ body{
   font-weight: 700; 
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(5px);
+  position: absolute;
+  top: 200px;
 }
 
 #cat{ 
