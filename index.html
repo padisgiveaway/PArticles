@@ -2,12 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Padis Article</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P-Articles | Programming Articles</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+<body>
+
+  <!-- 1. LOADER -->
+  <div id="loader">
+    <div class="loader-logo">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 5 L95 25 L95 75 L50 95 L5 75 L5 25 Z" fill="none" stroke="white" stroke-width="5"/>
+        <text x="50%" y="58%" text-anchor="middle" fill="white" font-size="45" font-weight="900" font-family="Arial">P</text>
+      </svg>
+    </div>
+    <h1>P-ARTICLES</h1>
+    <p>Loading your articles...</p>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- 2. FIXED HEADER - ADS + LIKE + CAT -->
+  <div class="header-fixed">
+    
+    <!-- ADSTERRA ADS -->
+    <div class="adsbox">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : 'YOUR_ADSTERRA_KEY_HERE',
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.profitabledisplaynetwork.com/YOUR_ADSTERRA_KEY_HERE/invoke.js"></script>
+    </div>
+
+    <!-- LIKED COUNTER -->
+    <div class="info">
+      <span id="like-count">0</span> Liked our posts
+    </div>
+
+    <!-- CATEGORY BUTTONS -->
+    <div id="cat">
+      <button class="active" data-category="all">All</button>
+      <button data-category="programming">Programming</button>
+      <button data-category="update">Update</button>
+      <button data-category="graphic">Graphic Design</button>
+    </div>
+
+  </div>
+
+  <!-- 3. SCROLLABLE CONTENT ONLY -->
+  <div class="content-wrapper">
+    <div class="content">
+      
+      <!-- ARTICLES WILL BE INJECTED HERE BY main.js -->
+      <!-- Example article structure -->
+      <div class="article-card" data-category="programming">
+        <img src="image1.jpg" alt="Article Image">
+        <button class="download-btn"><i class="fa-solid fa-download"></i></button>
+        <h2>How to Learn JavaScript in 30 Days</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is where your article content will be...</p>
+        <div class="article-actions">
+          <button class="share-article-btn"><i class="fa-brands fa-whatsapp"></i> Share</button>
+        </div>
+      </div>
+
+      <div class="article-card" data-category="update">
+        <video controls>
+          <source src="video1.mp4" type="video/mp4">
+        </video>
+        <button class="download-btn"><i class="fa-solid fa-download"></i></button>
+        <h2>New AI Update 2026</h2>
+        <p>Big news in tech today. Meta just released Muse Spark...</p>
+        <div class="article-actions">
+          <button class="share-article-btn"><i class="fa-brands fa-whatsapp"></i> Share</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 4. FIXED BOTTOM BUTTONS -->
+  <div id="reactions">
+    <button id="like"><i class="fa-solid fa-heart"></i></button>
+    <button id="share"><i class="fa-solid fa-share-nodes"></i></button>
+    <button id="group"><i class="fa-solid fa-users"></i></button>
+  </div>
 
 
+  <script src="main.js"></script>
+</body>
 </html>
