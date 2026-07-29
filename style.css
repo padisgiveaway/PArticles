@@ -80,7 +80,7 @@ body{
 #cat{ 
   width: 100%; 
   text-align: center; 
-  margin: 10px 0;
+  margin: 5px 0;
 }
 #cat button{ 
   width: 20%; max-width: 150px; margin: 5px; border-radius: 10px; border: 2px solid blue; 
