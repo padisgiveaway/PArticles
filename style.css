@@ -58,7 +58,7 @@ body{
   background: rgba(255,255,255,0.1); 
   border-radius: 10px;
   overflow: hidden; 
-  position: relative; /* no more absolute, parent is fixed */
+  position: absolute; /* no more absolute, parent is fixed */
 }
 
 /* 4. LIKE COUNTER - FIXED */
