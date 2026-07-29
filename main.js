@@ -20,7 +20,7 @@ const db = getDatabase(app);
 let currentFilter = "all";
 
 // 3. ADSTERRA DIRECT LINK - REPLACE THIS
-const ADSTERRA_DIRECT_LINK = "https://www.profitableratecpm.com/xxxxxxxxxx";
+const ADSTERRA_DIRECT_LINK = "https://www.effectivecpmnetwork.com/dz9t4c50gt?key=7ee83fd7bca42004938736d1c75ac9cc";
 
 // 1. HIDE LOADER AFTER 3 SECONDS
 window.addEventListener("load", () => {
