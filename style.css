@@ -81,7 +81,7 @@ body{
 #cat{ 
   width: 100%; 
   text-align: center; 
-  margin: 10px 0;
+  margin-top: 10px;
 }
 #cat button{ 
   width: 20%; max-width: 150px; margin: 5px; border-radius: 10px; border: 2px solid blue; 
@@ -92,13 +92,13 @@ body{
 /* 5. CONTENT - ONLY THIS SCROLLS */
 #container{ 
   width: 100%; 
-  height: 100vh; 
+  height: 70vh; 
   padding-top: 200px; /* PUSH CONTENT DOWN BELOW FIXED HEADER */
   padding-bottom: 80px; 
 }
 .content{ 
   width: 100%; 
-  height: calc(100vh - 280px); /* fixed height so it can scroll */
+  height: calc(70vh - 280px); /* fixed height so it can scroll */
   overflow-y: auto; /* ONLY THIS SCROLLS */
   overflow-x: hidden;
   padding-bottom: 20px;
