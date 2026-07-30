@@ -153,3 +153,6 @@ body{
 .share-article-btn:hover{
   background: #1ebe5c;
   }
+.content{
+  overflow: auto;
+}
