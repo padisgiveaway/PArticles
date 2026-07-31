@@ -197,7 +197,7 @@ body{
 /* 5. SCROLLABLE CONTENT ONLY */
 .content-wrapper {
   /* INCREASED: space for ad + cat + like */
-  padding-bottom: 80px; /* space for fixed footer buttons */
+  padding-bottom: 0px; /* space for fixed footer buttons */
   height: 80vh;
   overflow-y: auto; /* ONLY THIS SCROLLS */
   -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
@@ -205,7 +205,7 @@ body{
 
 .content{ 
   width: 100%; 
-  padding-bottom: 20px; /* extra space so last card no hide under buttons */
+  padding-bottom: 0px; /* extra space so last card no hide under buttons */
 }
 
 #reactions{ 
