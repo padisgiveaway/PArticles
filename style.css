@@ -156,3 +156,74 @@ body{
 .content{
   overflow: auto;
 }
+html, body {
+  height: 100%;
+  overflow: hidden; /* KEEP THIS */
+}
+
+body{
+  font-size: 15pt;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1974&auto=format&fit=crop");
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
+
+/* 3. AD BOX - make it fixed with header */
+.adsbox{
+  width: 90%; 
+  max-width: 728px; 
+  margin: 0 auto 5px auto;
+  text-align: center; 
+  min-height: 90px;
+  background: rgba(255,255,255,0.1); 
+  border-radius: 10px;
+  overflow: hidden; 
+}
+
+/* ADD THIS: wrap header things so we can calculate height */
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+  padding: 8px 0;
+}
+
+/* 5. SCROLLABLE CONTENT ONLY */
+.content-wrapper {
+  padding-top: 200px; /* INCREASED: space for ad + cat + like */
+  padding-bottom: 80px; /* space for fixed footer buttons */
+  height: 100vh;
+  overflow-y: auto; /* ONLY THIS SCROLLS */
+  -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
+}
+
+.content{ 
+  width: 100%; 
+  padding-bottom: 20px; /* extra space so last card no hide under buttons */
+}
+
+#reactions{ 
+  width: 100%; 
+  height: 9vh; 
+  position: fixed; /* GLUE TO BOTTOM */
+  bottom: 0; /* CHANGE: was 10px, make it 0 */
+  left: 0;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  background: rgba(0,0,0,0.3); /* add bg so e no transparent */
+  backdrop-filter: blur(5px);
+  z-index: 999; 
+}
+
+.article-card{
+  width: 90%; max-width: 600px; background-color: white; border-radius: 15px; border: 2px solid blue;
+  margin: 20px auto; padding: 0 0 15px 0; position: relative;
+  z-index: 1; /* make sure e dey below fixed buttons */
+    }
