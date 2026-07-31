@@ -196,9 +196,9 @@ body{
 
 /* 5. SCROLLABLE CONTENT ONLY */
 .content-wrapper {
-  padding-top: 200px; /* INCREASED: space for ad + cat + like */
+  /* INCREASED: space for ad + cat + like */
   padding-bottom: 80px; /* space for fixed footer buttons */
-  height: 100vh;
+  height: 80vh;
   overflow-y: auto; /* ONLY THIS SCROLLS */
   -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
 }
