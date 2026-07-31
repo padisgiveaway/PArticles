@@ -18,6 +18,7 @@ const analytics = getAnalytics(app);
 const db = getDatabase(app);
 
 let currentFilter = "all";
+let allArticlesData = []; // NEW: store all articles once
 
 // 3. ADSTERRA DIRECT LINK - REPLACE THIS
 const ADSTERRA_DIRECT_LINK = "https://www.effectivecpmnetwork.com/dz9t4c50gt?key=7ee83fd7bca42004938736d1c75ac9cc";
@@ -72,36 +73,57 @@ document.getElementById("share").addEventListener("click", async () => {
   catch { navigator.clipboard.writeText(shareData.url); alert("Link copied!"); }
 });
 
-// LOAD ARTICLES
+// FIX 1: LOAD ARTICLES ONCE, THEN FILTER
 function loadArticles() {
   const container = document.getElementById("articles-container");
+  
+  // Only load from firebase once
   onValue(ref(db, "articles"), (snapshot) => {
-    container.innerHTML = "";
+    allArticlesData = []; // clear array first
     snapshot.forEach((child) => {
-      const id = child.key;
-      const a = child.val();
-      if(currentFilter === "all" || a.category === currentFilter){
-        let media = "";
-        if(a.mediaType === "video") media = `<video src="${a.mediaUrl}" controls crossorigin="anonymous"></video>`;
-        else if(a.mediaType === "image") media = `<img src="${a.mediaUrl}" alt="${a.title}" crossorigin="anonymous">`;
-        let previewText = a.content.length > 120 ? a.content.substring(0, 120) + "..." : a.content;
-        container.innerHTML += `
-          <div class="article-card" id="article-${id}">
-            <button class="download-btn" onclick="downloadContent('${id}', '${a.mediaType}')"><i class="fa-solid fa-download"></i> Download</button>
-            ${media}
-            <h2>${a.title}</h2>
-            <p>${a.content}</p>
-            <div class="article-actions">
-              <button class="share-article-btn" onclick="shareArticle('${id}', \`${a.title}\`, \`${previewText}\`, \`${a.mediaUrl}\`)">
-                <i class="fa-solid fa-share"></i> Share This Post
-              </button>
-            </div>
-          </div>
-        `;
-      }
+      allArticlesData.push({ id: child.key, ...child.val() });
     });
+    renderArticles(); // render after loading
   });
 }
+
+// FIX 2: NEW FUNCTION TO RENDER + FILTER
+function renderArticles() {
+  const container = document.getElementById("articles-container");
+  container.innerHTML = ""; // CLEAR OLD ARTICLES FIRST
+  
+  const filtered = currentFilter === "all" 
+    ? allArticlesData 
+    : allArticlesData.filter(a => a.category === currentFilter);
+  
+  if(filtered.length === 0){
+    container.innerHTML = `<p style="text-align:center; color:white; padding:20px;">No articles in this category yet.</p>`;
+    return;
+  }
+
+  filtered.forEach((a) => {
+    const id = a.id;
+    let media = "";
+    if(a.mediaType === "video") media = `<video src="${a.mediaUrl}" controls crossorigin="anonymous"></video>`;
+    else if(a.mediaType === "image") media = `<img src="${a.mediaUrl}" alt="${a.title}" crossorigin="anonymous">`;
+    let previewText = a.content.length > 120 ? a.content.substring(0, 120) + "..." : a.content;
+    
+    container.innerHTML += `
+      <div class="article-card" id="article-${id}">
+        <button class="download-btn" onclick="downloadContent('${id}', '${a.mediaType}')"><i class="fa-solid fa-download"></i> Download</button>
+        ${media}
+        <h2>${a.title}</h2>
+        <p>${a.content}</p>
+        <div class="article-actions">
+          <button class="share-article-btn" onclick="shareArticle('${id}', \`${a.title}\`, \`${previewText}\`, \`${a.mediaUrl}\`)">
+            <i class="fa-solid fa-share"></i> Share This Post
+          </button>
+        </div>
+      </div>
+    `;
+  });
+}
+
 loadArticles();
 
 // SHARE INDIVIDUAL ARTICLE
@@ -138,12 +160,12 @@ window.downloadContent = async (id, mediaType) => {
   }, 1000);
 }
 
-// FILTER
+// FIX 3: FILTER - NOW IT ONLY RENDERS, NO RELOAD
 document.querySelectorAll(".cat-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     currentFilter = btn.dataset.cat;
-    loadArticles();
+    renderArticles(); // JUST RERENDER, NO NEW FIREBASE CALL
   });
 });
