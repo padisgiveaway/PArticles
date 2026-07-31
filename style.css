@@ -225,5 +225,5 @@ body{
   width: 90%; max-width: 600px; background-color: white; border-radius: 15px; border: 2px solid blue;
   margin: 20px auto; padding: 0 0 15px 0; position: relative;
   z-index: 1; /* make sure e dey below fixed buttons */
-  margin-bottom: 0px
+  margin-bottom: 20px
     }
