@@ -89,10 +89,8 @@ body{
 #cat button.active{ background: blue; color: white; }
 
 /* 5. SCROLLABLE CONTENT ONLY */
-.content-wrapper {
-  padding-top: 5px; /* SPACE FOR FIXED HEADER */
+.content-wrapper{ padding-top: 0px; /* SPACE FOR FIXED HEADER */
   padding-bottom: 0px; /* SPACE FOR FIXED FOOTER */
-  height: 70vh;
   overflow-y: auto; /* ONLY THIS SCROLLS */
 }
 
@@ -198,7 +196,7 @@ body{
 .content-wrapper {
   /* INCREASED: space for ad + cat + like */
   padding-bottom: 0px; /* space for fixed footer buttons */
-  height: 70vh;background: black;
+  height: 65vh;background: black;
   overflow-y: auto; /* ONLY THIS SCROLLS */
   -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
 }
