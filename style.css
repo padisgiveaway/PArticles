@@ -90,9 +90,9 @@ body{
 
 /* 5. SCROLLABLE CONTENT ONLY */
 .content-wrapper {
-  padding-top: 185px; /* SPACE FOR FIXED HEADER */
-  padding-bottom: 90px; /* SPACE FOR FIXED FOOTER */
-  height: 100vh;
+  padding-top: 5px; /* SPACE FOR FIXED HEADER */
+  padding-bottom: 0px; /* SPACE FOR FIXED FOOTER */
+  height: 70vh;
   overflow-y: auto; /* ONLY THIS SCROLLS */
 }
 
