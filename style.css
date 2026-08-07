@@ -196,7 +196,7 @@ body{
 .content-wrapper {
   /* INCREASED: space for ad + cat + like */
   padding-bottom: 0px; /* space for fixed footer buttons */
-  height: 65vh;background: black;
+  height: 64vh;
   overflow-y: auto; /* ONLY THIS SCROLLS */
   -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
 }
